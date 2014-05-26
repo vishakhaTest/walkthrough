@@ -1,0 +1,11 @@
+stack_name: walkthrough-prod
+environment: production
+paas_environment: production
+
+layers:
+  - dns:
+      - name: 'walkthrough.prod.paas.aws.vodafone.com.au'
+    instances:
+      ami_name: <%=ami_name%>
+      env:
+        LOG_FILENAME: walkthrough-prod

@@ -1,0 +1,15 @@
+platform: devops
+environment: production
+subnet: ss_build
+ami: ami-89c75fb3
+instance_type: c3.large
+share_platforms: ["paas.production","paas.preproduction","paas.test"]
+run_list: ["paas-rack::setup"]
+upload_files: [ { source: ".", destination: "/home/ec2-user/application" } ]
+staging_directory: /home/ec2-user/chef
+cookbook_paths: ["vendor/cookbooks"]
+run_tags: {XsuiteIgnore: ''}
+# Chef attributes to pass to chef-solo
+json: {
+ application_name: walkthrough
+}

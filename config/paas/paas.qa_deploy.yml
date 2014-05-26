@@ -1,0 +1,11 @@
+stack_name: walkthrough-qa
+environment: test
+paas_environment: test
+
+layers:
+  - dns:
+      - name: 'walkthrough.test.paas.vodalabs.com.au'
+    instances:
+      ami_name: <%=ami_name%>
+      env:
+        LOG_FILENAME: walkthrough-qa
